@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--vkui--color_background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Desktop container - centered with max width */
+@media (min-width: 480px) {
+  body {
+    background: #f5f5f5;
+  }
+
+  #root {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .app-container {
+    max-width: 420px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    background: var(--vkui--color_background);
+    position: relative;
+  }
+}
+
+/* Mobile - container takes full width */
+@media (max-width: 479px) {
+  .app-container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* Smooth scrolling for the app */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--vkui--color_icon_secondary);
+  border-radius: 3px;
+  opacity: 0.3;
+}
+
+/* Clean white header with subtle shadow */
+.vkuiPanelHeader {
+  background: #fff !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+}
+
+.vkuiPanelHeader__in {
+  background: transparent !important;
+}
+
+/* Ensure VKUI modals animate smoothly */
+.vkuiModalRoot__modal {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Better card styling */
+.vkuiRichCell {
+  background: #fff;
+  margin: 8px 12px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+/* Clean group headers */
+.vkuiGroup__header {
+  padding-left: 16px !important;
+}
+
+/* Tabbar styling - position inside app container on desktop */
+.vkuiTabbar {
+  background: #fff;
+  box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08);
+}
+
+@media (min-width: 480px) {
+  .vkuiTabbar {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    max-width: 420px;
+    width: 100%;
+  }
+}
+
+/* Pull to refresh */
+.vkuiPullToRefresh {
+  min-height: auto;
+}
+
+/* Snackbar positioning */
+.vkuiSnackbar {
+  bottom: 16px !important;
+}
+
+@media (min-width: 480px) {
+  .vkuiSnackbar {
+    max-width: 380px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+}

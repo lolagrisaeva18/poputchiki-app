@@ -1,0 +1,1 @@
+ALTER TABLE trips ADD COLUMN trip_type TEXT NOT NULL DEFAULT 'driver' CHECK (trip_type IN ('driver', 'passenger'));
